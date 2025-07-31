@@ -46,12 +46,36 @@ let double = function (num) {
 let c = double(10)
 console.log(c)
 
-wundow.onload = function () {
+window.onload = function () {
     console.log(document.querySelector("#year"))
-    document.querySelector("year_btn").addEventListener("click", function () {
+    document.querySelector("#year_btn").addEventListener("click", function () {
         const year = parseInt(document.querySelector("#year").value)
+        if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+            result = "閏年"
+        } else {
+            result = "不是閏年"
+        }
         console.log(year)
         document.querySelector("#answer").innerHTML = year
     })
 }
+const isTriangle = function (a, b, c) {
+    return a + b > c && a + c > b && b + c > a
+}
+isTriangle.log(isTriangle(1, 2, 3))
+isTriangle.log(isTriangle(3, 4, 5))
 
+const countBMI = function (height, weight) {
+    return weight / (height * height)
+}
+console.log(countBMI(1.7, 60))
+
+
+const whichIsBig = function (a, b) {
+    if (a > b)
+        return a
+    else if (b > a) {
+        return b
+    }
+}
+    (whichIsBig(1, 2))
