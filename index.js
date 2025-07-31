@@ -45,3 +45,13 @@ let double = function (num) {
 }
 let c = double(10)
 console.log(c)
+
+wundow.onload = function () {
+    console.log(document.querySelector("#year"))
+    document.querySelector("year_btn").addEventListener("click", function () {
+        const year = parseInt(document.querySelector("#year").value)
+        console.log(year)
+        document.querySelector("#answer").innerHTML = year
+    })
+}
+
